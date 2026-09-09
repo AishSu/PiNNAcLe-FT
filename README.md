@@ -22,7 +22,7 @@ PiNNAcLe (https://github.com/Teoroo-CMC/PiNNAcLe) was originally developed for a
 + The energy and force weights of outliers with _f_max_ values exceeding twice the tolerance threshold were set to zero to stabilize the fine-tuning process.
 + A _start_idx_ option was added to params.collect_flags to skip the several initial snapshots when sampling the trajectory, thereby avoiding potential data leakage.
 
-# Installation on Alvis
+# Installation on Alvis (obsolete) 
 + Download the PiNNAcLe-FT repo
 ```
 git clone https://github.com/Teoroo-CMC/PiNNAcLe-FT.git
@@ -52,7 +52,7 @@ cp PiNNAcLe-FT/tips_modified/io/*.py {TIPS_DIR}/io/
 cp PiNNAcLe-FT/tips_modified/cli/*.py {TIPS_DIR}/cli/
 ```
 
-# Installation on Arrhenius
+# Installation on Arrhenius (https://www.naiss.se/resource/arrhenius/)
 
 + Install Nextflow by following the documentation https://www.nextflow.io/docs/latest/install.html
 
