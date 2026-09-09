@@ -13,12 +13,12 @@ PiNNAcLe (https://github.com/Teoroo-CMC/PiNNAcLe) was originally developed for a
 + Insufficient initial DFT data or limited conformational diversity often leads to unstable gen0 model, thereby slowing down both subsequent DFT labelling and active learn-on-the-fly convergence in the PiNNAcLe.
 
 # Approach
-+ Construct a diverse dataset for target systems using low-cost (compared to DFT not to the distilled model!) foundation models (e.g., MACE-MP-0, https://github.com/ACEsuit/mace-foundations).
-+ Pre-train PiNet2-P3 models on this dataset for the gen0 model, i.e. foundation model distillation (see https://doi.org/10.1016/j.electacta.2026.149136).
-+ Initiate the PiNNAcLe-FT workflow to fine-tune the pre-trained PiNet2-P3 models with DFT labels and the matched atomic dress.
-  - In each generation, a number of new snapshots are collected from the MD trajectory driven by the latest PiNet2-P3 models.
-  - The collected snapshots are then labeled using the CP2K package at the predefined DFT level and added to the DFT dataset.
-  - The atomic dresses of the PiNet2-P3 model are updated based on the new training set, followed by model fine-tuning.
++ Construct a diverse dataset for target systems using low-cost (compared to DFT not to the distilled model!) foundation models, e.g., MACE-MP-0, https://github.com/ACEsuit/mace-foundations.
++ Pre-train PiNet2-P3 on this dataset for the gen0 model, i.e. foundation model distillation (see https://doi.org/10.1016/j.electacta.2026.149136).
++ Initiate the PiNNAcLe-FT workflow to fine-tune the gen0 model with DFT labels and the matched atomic dress.
+  - In each generation, a number of new snapshots are collected from the MD trajectory.
+  - The collected snapshots are then labeled using the CP2K package (https://www.cp2k.org) at the predefined DFT level and added to the DFT dataset.
+  - The atomic dresses in the PiNet2-P3 are updated based on the new training set, followed by model fine-tuning for the next generation.
 + The energy and force weights of outliers with _f_max_ values exceeding twice the tolerance threshold were set to zero to stabilize the fine-tuning process.
 + A _start_idx_ option was added to params.collect_flags to skip the several initial snapshots when sampling the trajectory, thereby avoiding potential data leakage.
 
