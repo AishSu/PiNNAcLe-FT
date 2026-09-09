@@ -114,17 +114,17 @@ apptainer exec "pinn-cpu-acle.sif" tips --help # check tips
 # Usage
 + Step 1: Run MD simulations using foundation models to construct a large and conformationally diverse dataset from the trajectories.
   - Conformational diversity can be enhanced by performing MD simulations at varying temperatures or concentrations.
-+ Step 2: Pre-train PiNet2-P3 models on the constructed dataset.
-  - For more usage details, please refer to the PiNN documentation (https://teoroo-cmc.github.io/PiNN/master/).
++ Step 2: Pre-train PiNet2-P3 on the constructed dataset for the gen0 model.
+  - For more usage details, please refer to the PiNN repo https://github.com/Teoroo-CMC/PiNN/ and our publication regarding this step: https://doi.org/10.1016/j.electacta.2026.149136.
 + Step 3: Prepare input and configuration files for PiNNAcLe-FT.
   - Modify the CP2K input parameters in _input/cp2k/r2SCAN-sp.inp_ to match your target system.
   - Copy the system XYZ file to _input/geo_ and the pre-trained models to _input/models_.
   - Update the environment path, PYTHONPATH, cp2k2023_2.sif path, GPU configuration, and SLURM account in the _nextflow.config_ file.
 + Step 4: Adjust the PiNNAcLe-FT hyperparameters in _nextflow/acle-cp2k-from-user-model.nf_ based on your specific task.
-  - The _params.change_edress_ hyperparameter controls whether the e_dress of PiNet2-P3 models is updated during fine-tuning.
+  - The _params.change_edress_ hyperparameter controls whether the e_dress in PiNet2-P3 is updated during fine-tuning.
   - If disk space is limited, uncomment **release_space** channel to remove some intermediate files.
   - For other hyperparameters, please refer to the original PiNNAcLe documentation: https://teoroo-cmc.github.io/PiNNAcLe/recipe/acle/
-+ Step 5: Fine-tune the PiNet2-P3 model
++ Step 5: Fine-tune the gen0 model according to the active learn-on-the-fly implemented in PiNNAcLe untill meeting the convergence criteria.
 ```
 cd PiNNAcLe-FT
 nextflow run main.nf -profile alvis -bg > log.out                  # on Alvis
