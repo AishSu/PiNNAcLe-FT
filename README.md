@@ -52,7 +52,9 @@ cp PiNNAcLe-FT/tips_modified/io/*.py {TIPS_DIR}/io/
 cp PiNNAcLe-FT/tips_modified/cli/*.py {TIPS_DIR}/cli/
 ```
 
-# Installation on Arrhenius (https://www.naiss.se/resource/arrhenius/)
+# Installation on Arrhenius
+
++ Description of the machine: https://www.naiss.se/resource/arrhenius/
 
 + Install Nextflow by following the documentation https://www.nextflow.io/docs/latest/install.html
 
