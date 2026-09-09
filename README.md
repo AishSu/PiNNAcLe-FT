@@ -10,7 +10,7 @@ PiNNAcLe (https://github.com/Teoroo-CMC/PiNNAcLe) was originally developed for a
 # Motivation
 + The original PiNNAcLe workflow requires a large initial DFT dataset to build PiNet2-P3 models in the first generation, i.e., gen0 model.
 + Constructing a large DFT dataset is a time-consuming and inefficient process.
-+ Insufficient initial DFT data or limited conformational diversity often leads to unstable gen0 model, thereby slowing down both subsequent DFT labelling and model convergence in the PiNNAcLe.
++ Insufficient initial DFT data or limited conformational diversity often leads to unstable gen0 model, thereby slowing down both subsequent DFT labelling and active learn-on-the-fly convergence in the PiNNAcLe.
 
 # Approach
 + Construct a diverse dataset for target systems using low-cost foundation models (e.g., MACE-MP-0, https://github.com/ACEsuit/mace-foundations).
