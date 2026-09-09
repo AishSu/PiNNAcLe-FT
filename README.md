@@ -13,7 +13,7 @@ PiNNAcLe (https://github.com/Teoroo-CMC/PiNNAcLe) was originally developed for a
 + Insufficient initial DFT data or limited conformational diversity often leads to unstable gen0 model, thereby slowing down both subsequent DFT labelling and active learn-on-the-fly convergence in the PiNNAcLe.
 
 # Approach
-+ Construct a diverse dataset for target systems using low-cost foundation models (e.g., MACE-MP-0, https://github.com/ACEsuit/mace-foundations).
++ Construct a diverse dataset for target systems using low-cost (compared to DFT not to the distilled model!) foundation models (e.g., MACE-MP-0, https://github.com/ACEsuit/mace-foundations).
 + Pre-train PiNet2-P3 models on this dataset for the gen0 model, i.e. foundation model distillation (see https://doi.org/10.1016/j.electacta.2026.149136).
 + Initiate the PiNNAcLe-FT workflow to fine-tune the pre-trained PiNet2-P3 models with DFT labels and the matched atomic dress.
   - In each generation, a number of new snapshots are collected from the MD trajectory driven by the latest PiNet2-P3 models.
