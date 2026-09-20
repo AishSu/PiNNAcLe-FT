@@ -22,36 +22,6 @@ PiNNAcLe (https://github.com/Teoroo-CMC/PiNNAcLe) was originally developed for a
 + The energy and force weights of outliers with _f_max_ values exceeding twice the tolerance threshold were set to zero to stabilize the fine-tuning process.
 + A _start_idx_ option was added to params.collect_flags to skip the several initial snapshots when sampling the trajectory, thereby avoiding potential data leakage.
 
-# Installation on Alvis (obsolete) 
-+ Download the PiNNAcLe-FT repo
-```
-git clone https://github.com/Teoroo-CMC/PiNNAcLe-FT.git
-```
-+ Create the conda environment
-```
-cd PiNNAcLe-FT
-conda env create -f environment.yml
-conda activate pinnacle
-```
-+ Install Nextflow by following the documentation https://www.nextflow.io/docs/latest/install.html
-+ Build singularity image of cp2k-2023.2
-```
-cd docker
-apptainer build cp2k2023_2.sif cp2k-v2023.def
-```
-+ Install the PiNN package
-```
-cd ..
-pip install git+https://github.com/Teoroo-CMC/PiNN.git --no-deps
-cp PiNNAcLe-FT/pinn_modified/*.py {PINN_DIR}/models/
-```
-+ Install the tips package developed by Yunqi, and update the modifications
-```
-pip install git+https://github.com/yqshao-archive/tips.git
-cp PiNNAcLe-FT/tips_modified/io/*.py {TIPS_DIR}/io/
-cp PiNNAcLe-FT/tips_modified/cli/*.py {TIPS_DIR}/cli/
-```
-
 # Installation on Arrhenius
 
 + Description of the machine: https://www.naiss.se/resource/arrhenius/
