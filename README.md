@@ -110,6 +110,40 @@ apptainer build pinn-cpu-acle.sif Singularity-acle
 apptainer exec "pinn-cpu-acle.sif" pinn --help # check pinn
 apptainer exec "pinn-cpu-acle.sif" tips --help # check tips
 ```
+# Using the shared Apptainer images
+
+The prebuilt `.sif` files stored under the shared PiNNAcLe-FT installation can be reused. Therefore, each user does not need to build separate copies of the Apptainer images.
+
+The shared PiNNAcLe-FT installation is located at:
+
+```text
+/nobackup/proj/disk/snic2022-5-322/shared/zhanyun/PiNNAcLe-FT
+```
+
+When running the workflow from a personal directory, the shared `.sif` files should be specified in the Arrhenius profile in `nextflow.config`.
+
+### Fixing the PiNN model-loading failure
+
+When the workflow was run using the shared Apptainer images, PiNN initially failed to load the model. The original `runOptions` setting in `nextflow.config` was:
+
+```groovy
+runOptions = "--nv -B ${params.acle_dir} --env PYTHONPATH=${params.acle_dir}/bin"
+```
+
+With this configuration, only the directory specified by `params.acle_dir` was bound inside the container. Consequently, the model stored in the personal project directory was not visible inside the container.
+
+The problem was fixed by binding the common project root, which contains both the `shared` and `personal` directories. The `PYTHONPATH` was also explicitly set to the `bin` directory of the shared PiNNAcLe-FT installation:
+
+```groovy
+runOptions = '--nv -B /nobackup/proj/disk/snic2022-5-322 --env PYTHONPATH=/nobackup/proj/disk/snic2022-5-322/shared/zhanyun/PiNNAcLe-FT/bin'
+```
+
+After this change, Apptainer could access both:
+
+- the shared PiNNAcLe-FT installation and `.sif` files; and
+- the model stored in the personal working directory.
+
+The PiNN model could then be loaded successfully by the Nextflow workflow.
 
 # Usage
 + Step 1: Run MD simulations using foundation models to construct a large and conformationally diverse dataset from the trajectories.
