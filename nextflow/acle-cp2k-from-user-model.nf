@@ -36,7 +36,7 @@ params.restart_conv  = true // is the last gen converged? If you want to use you
 // acle parameters =======================================================================
 params.ref           = 'cp2k' // reference (module name)
 params.ref_inp       = 'input/cp2k/r2SCAN-sp.inp'
-params.mlp           = 'pinn' // machine learning potential (module name)
+params.mlp           = 'pinn-plumed' // machine learning potential (module name)
 params.train_flags   = '--log-every 1000 --ckpt-every 1000 --batch 1 --max-ckpts 1 --shuffle-buffer 3000'
 params.train_init    = '--init' // intialize the parameters for mlp, e.g., e_dress
 params.exit_at_max_time = false

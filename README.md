@@ -49,7 +49,7 @@ conda activate /nobackup/proj/disk/snic2022-5-322/shared/zhanyun/conda_envs/pinn
 cd docker
 apptainer build cp2k2023_2.sif cp2k-v2023.def
 ```
-+ Build the PiNN GPU docker image
++ Build the PiNN GPU docker image with Plumed
 ```
 git clone https://github.com/Teoroo-CMC/PiNN.git
 cp ../pinn_modified/Singularity-acle* PiNN/
@@ -59,7 +59,7 @@ mkdir apptainer-cache
 mkdir apptainer-tmp
 export APPTAINER_CACHEDIR=/nobackup/proj/disk/snic2022-5-322/shared/zhanyun/PiNNAcLe-FT/docker/PiNN/apptainer-cache
 export APPTAINER_TMPDIR=/nobackup/proj/disk/snic2022-5-322/shared/zhanyun/PiNNAcLe-FT/docker/PiNN/apptainer-tmp
-apptainer build pinn-gpu-acle.sif Singularity-acle.gpu
+apptainer build pinn-gpu-acle.sif Singularity-acle-plumed.gpu
 apptainer exec "pinn-gpu-acle.sif" pinn --help # check
 ```
 + Check if the tips package was updated correctly
