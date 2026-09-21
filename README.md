@@ -30,7 +30,7 @@ PiNNAcLe (https://github.com/Teoroo-CMC/PiNNAcLe) was originally developed for a
 
 + Prepare the GPU environment for installation
 ```
-srun -A naiss2025-5-447-gpu -p gpu --gres=gpu:nvidia_gh200_120gb:1 -t 2:00:00 --mem=120G --pty bash
+srun -A naiss2026-3-693-gpu -p gpu --gres=gpu:nvidia_gh200_120gb:1 -t 2:00:00 --mem=120G --pty bash
 module load GPU/Miniforge/26.3.2-2-eb
 ```
 
@@ -52,7 +52,6 @@ apptainer build cp2k2023_2.sif cp2k-v2023.def
 + Build the PiNN GPU docker image
 ```
 git clone https://github.com/Teoroo-CMC/PiNN.git
-cp ../pinn_modified/*.py PiNN/pinn/models/
 cp ../pinn_modified/Singularity-acle* PiNN/
 cp -r ../tips_modified PiNN
 cd PiNN
