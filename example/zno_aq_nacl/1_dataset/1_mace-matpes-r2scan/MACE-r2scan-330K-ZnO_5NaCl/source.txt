@@ -1,0 +1,4 @@
+wsl work: /home/aishu/work/PiNN_project/MLP_ZnO_aqNaCl/5_build_training_dataset/1_test
+
+Initial trajectory generation in alvis which is backed up in brosnan:
+/home/aishu/metadynamics_bkp/2ZnO_NaCl_aq_system/0unbiased_NVT_MD/0mace_r2scan/0cont_330K

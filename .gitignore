@@ -1,0 +1,5 @@
+
+# Generated datasets, trajectories, and training logs
+*.tfr
+*.traj
+events.out.tfevents.*

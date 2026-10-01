@@ -1,0 +1,44 @@
+2026-10-01 15:09:25.179965: E external/local_xla/xla/stream_executor/cuda/cuda_dnn.cc:9373] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+2026-10-01 15:09:25.181091: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:607] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+2026-10-01 15:09:25.271600: E external/local_xla/xla/stream_executor/cuda/cuda_blas.cc:1534] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-10-01 15:09:28.661045: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1926] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 94912 MB memory:  -> device: 0, name: NVIDIA GH200 120GB, pci bus id: 0009:01:00.0, compute capability: 9.0
+Number of frames = 1170
+
+Evaluating seed 0
+Dataset: /nobackup/proj/disk/snic2022-5-322/personal/aishu/PiNNAcLe-FT/example/zno_aq_nacl/2_pinet2_pr/1_mace-matpes-r2scan/split_ds_seed/eval_seed0.yml
+Model: /nobackup/proj/disk/snic2022-5-322/personal/aishu/PiNNAcLe-FT/example/zno_aq_nacl/2_pinet2_pr/1_mace-matpes-r2scan/PiNet2_models/ZnO_aqNaCl_ZnCl2-330K-macer2scan-5854-pinet2-B1-5E6-0
+WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/pinn/models/base.py:102: Estimator.__init__ (from tensorflow_estimator.python.estimator.estimator) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.keras instead.
+WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/tensorflow_estimator/python/estimator/estimator.py:1844: RunConfig.__init__ (from tensorflow_estimator.python.estimator.run_config) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.keras instead.
+/nobackup/proj/disk/snic2022-5-322/personal/aishu/PiNNAcLe-FT/example/zno_aq_nacl/2_pinet2_pr/1_mace-matpes-r2scan/compute_error.py:55: FutureWarning: Please use atoms.calc = calc
+  atoms.set_calculator(calc)
+WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/pinn/calculator.py:87: calling DatasetV2.from_generator (from tensorflow.python.data.ops.dataset_ops) with output_types is deprecated and will be removed in a future version.
+Instructions for updating:
+Use output_signature instead
+WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/pinn/calculator.py:87: calling DatasetV2.from_generator (from tensorflow.python.data.ops.dataset_ops) with output_shapes is deprecated and will be removed in a future version.
+Instructions for updating:
+Use output_signature instead
+WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/pinn/models/potential.py:89: EstimatorSpec.__new__ (from tensorflow_estimator.python.estimator.model_fn) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.keras instead.
+WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/tensorflow/python/saved_model/model_utils/export_utils.py:365: PredictOutput.__init__ (from tensorflow.python.saved_model.model_utils.export_output) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.keras instead.
+2026-10-01 15:09:32.289351: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1926] Created device /job:localhost/replica:0/task:0/device:GPU:0 with 94912 MB memory:  -> device: 0, name: NVIDIA GH200 120GB, pci bus id: 0009:01:00.0, compute capability: 9.0
+2026-10-01 15:09:32.317440: I tensorflow/compiler/mlir/mlir_graph_optimization_pass.cc:388] MLIR V1 optimization pass is not enabled
+WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/tensorflow/python/training/monitored_session.py:1455: SessionRunArgs.__new__ (from tensorflow.python.training.session_run_hook) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.keras instead.
+WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/tensorflow/python/training/monitored_session.py:1454: SessionRunContext.__init__ (from tensorflow.python.training.session_run_hook) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.keras instead.
+2026-10-01 15:09:32.966007: I tensorflow/core/util/cuda_solvers.cc:179] Creating GpuSolver handles for stream 0xaaaad748c890
+WARNING:tensorflow:From /usr/local/lib/python3.10/dist-packages/tensorflow/python/training/monitored_session.py:1474: SessionRunValues.__new__ (from tensorflow.python.training.session_run_hook) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.keras instead.
+/nobackup/proj/disk/snic2022-5-322/personal/aishu/PiNNAcLe-FT/example/zno_aq_nacl/2_pinet2_pr/1_mace-matpes-r2scan/compute_error.py:55: FutureWarning: Please use atoms.calc = calc
+  atoms.set_calculator(calc)
+Seed 0: emax=1.183298 meV/atom, fmax=1823.584080 meV/Å, ermse=0.432823 meV/atom, frmse=48.816468 meV/Å

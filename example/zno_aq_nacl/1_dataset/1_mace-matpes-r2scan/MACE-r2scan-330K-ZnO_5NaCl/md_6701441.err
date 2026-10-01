@@ -1,0 +1,8 @@
+/mimer/NOBACKUP/groups/snic2022-5-322/sudhama/project/pinn-env-2/lib/python3.10/site-packages/e3nn/o3/_wigner.py:10: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  _Jd, _W3j_flat, _W3j_indices = torch.load(os.path.join(os.path.dirname(__file__), 'constants.pt'))
+/mimer/NOBACKUP/groups/snic2022-5-322/sudhama/project/pinn-env-2/lib/python3.10/site-packages/mace/calculators/mace.py:199: UserWarning: Environment variable TORCH_FORCE_NO_WEIGHTS_ONLY_LOAD detected, since the`weights_only` argument was not explicitly passed to `torch.load`, forcing weights_only=False.
+  torch.load(f=model_path, map_location=device)
+WARNING:root:Default dtype float32 does not match model dtype float64, converting models to float32.
+/mimer/NOBACKUP/groups/snic2022-5-322/sudhama/project/metadynamics/2ZnO_NaCl_aq_system/0unbiased_NVT_MD/0mace_r2scan/0cont_330K/continue_NVT_mace_md.py:69: FutureWarning: Please use atoms.calc = calc
+  atoms.set_calculator(macemp)
+slurmstepd: error: *** JOB 6701441 ON alvis1-12 CANCELLED AT 2026-06-04T12:01:19 ***

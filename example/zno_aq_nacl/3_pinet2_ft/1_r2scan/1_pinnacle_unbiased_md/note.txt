@@ -1,0 +1,1 @@
+Since r2scan calculations are expensive compared to pbe, I am changing the sp_points, nsample to 5 and split ratio for the new dataset created from 9:1 to 8:2 in pinn.nf.

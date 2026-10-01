@@ -1,0 +1,1 @@
+wsl work source: /home/aishu/work/PiNN_project/MLP_ZnO_aqNaCl/5_build_training_dataset/2_test_remove_outliers
